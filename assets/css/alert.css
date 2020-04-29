@@ -1,0 +1,30 @@
+#alert {
+    position: absolute;
+    width: 500px;
+    top: 120px;
+    left: 30%;
+}
+
+.alert-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+#alert .alert {
+    position: relative;
+    padding: 2rem 2rem;
+    margin-bottom: 1rem;
+    border: 4px solid transparent;
+    border-radius: 0.25rem;
+}
+
+#alert .alert-danger {
+    color: #00f0f0;
+    /*background-color: #f8d7da;*/
+    /*border-color: #f5c6cb;*/
+
+    background: #012826;
+    border-color: #f50b1e;
+
+}

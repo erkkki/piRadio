@@ -1,0 +1,30 @@
+#svgTitle .title {
+    fill: #00f0f0;
+    font-size: 2em;
+}
+
+#svgTitle .st0 {
+    fill: none;
+    stroke: #00f0f0;
+    stroke-width: 6;
+    stroke-linecap: square;
+    stroke-dasharray: 120, 20, 110, 20, 140;
+}
+#svgTitle .st1 {
+    fill: none;
+    stroke: #00f0f0;
+    stroke-width: 6;
+    stroke-dasharray: 4;
+}
+#svgTitle .st2 {
+    fill: none;
+    stroke: #00f0f0;
+    stroke-width: 6;
+    stroke-linecap: square;
+    stroke-dasharray: 10, 120, 40, 20, 10, 140;
+}
+#svgTitle .st3 {
+    fill: none;
+    stroke-width: 2;
+    stroke: #00f0f0;
+}

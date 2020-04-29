@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <!-- css -->
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        <!-- /css -->
+    </head>
+
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar -->
+            <div class="bg-dark" id="sidebar-wrapper">
+                <nav>
+                    <div class="glow-ball-container">
+                        <div class="glow-ball"></div>
+                    </div>
+
+                    <div class="sidebar-head">
+                        <a href="/">
+                            <svg id="svgTitle" viewBox="0 0 400 400">
+                                <text x="100" y="220" class="title">PiRadio</text>
+                                <circle class="st0" cx="200" cy="200" r="150">
+                                    <animateTransform attributeType="xml"
+                                                      attributeName="transform"
+                                                      type="rotate"
+                                                      from="0 200 200"
+                                                      to="360 200 200"
+                                                      dur="200s"
+                                                      repeatCount="indefinite"/>
+                                </circle>
+                                <circle class="st1" cx="200" cy="200" r="160">
+                                    <animateTransform attributeType="xml"
+                                                      attributeName="transform"
+                                                      type="rotate"
+                                                      from="360 200 200"
+                                                      to="0 200 200"
+                                                      dur="200s"
+                                                      repeatCount="indefinite"/>
+                                </circle>
+                                <circle class="st2" cx="200" cy="200" r="170">
+                                    <animateTransform attributeType="xml"
+                                                      attributeName="transform"
+                                                      type="rotate"
+                                                      from="0 200 200"
+                                                      to="360 200 200"
+                                                      dur="200s"
+                                                      repeatCount="indefinite"/>
+                                </circle>
+                                <circle class="st3" cx="200" cy="200" r="174"/>
+                            </svg>
+
+
+                        </a>
+                    </div>
+                    <div class="list-group list-group-flush">
+                        <div class="skew">
+                            <a ui-sref="country">
+                                <div class="skew-cancel text-center">
+                                    Country
+                                </div>
+                            </a>
+                        </div>
+                        <div class="skew">
+                            <a ui-sref="genre">
+                                <div class="skew-cancel text-center">
+                                    Genres
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- /sidebar-->
+
+            <!-- main content -->
+            <div id="page-content-wrapper">
+                <!-- player -->
+                <player></player>
+                <!-- /player -->
+
+                <div class="glow-ball-container-2">
+                    <div class="glow-ball-2"></div>
+                </div>
+
+                <!-- view -->
+                <div class="ui-view-container">
+                    <ui-view class="view-animation"></ui-view>
+                </div>
+
+                {#{% block body %}{% endblock %}#}
+
+                <!-- /view -->
+            </div>
+            <!-- /main content -->
+        </div>
+
+        <!-- alert box -->
+        <alert></alert>
+        <!-- js -->
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+        <!-- /js -->
+
+
+    </body>
+</html>

@@ -1,0 +1,22 @@
+$body-bg: #0e0e10;
+$body-color: #efeff1;
+
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  overflow-x: hidden;
+}
+
+#page-content-wrapper {
+  width: 80%;
+}
+
+.bg-dark {
+  background-color: #1f1f23 !important;
+}
+
+.list-group-item {
+  color: #efeff1;
+}
+
+

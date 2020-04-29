@@ -1,0 +1,88 @@
+.glow-ball-container-2 {
+    position: relative;
+}
+.glow-ball-2 {
+    position: absolute;
+    /*right: -2px;*/
+
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #00f0f0;
+    box-shadow: 0 0 10px 10px #00f0f0;
+
+    animation-duration: 20s;
+    -webkit-animation-duration: 20s;
+    animation-delay: 2s;
+    -webkit-transition-delay: 2s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+
+    animation-name: glow-ball-move-2;
+    -webkit-animation-name: glow-ball-move-2;
+
+}
+@-webkit-keyframes glow-ball-move-2 {
+    0% {
+        left: 80vw;
+        box-shadow: 0 0 4px 4px #00f0f0;
+        opacity: 20%;
+        -webkit-animation-timing-function: ease-in;
+    }
+    25% {
+        left: 40vw;
+        box-shadow: 0 0 8px 8px #00f0f0;
+        opacity: 100%;
+        -webkit-animation-timing-function: ease-out;
+    }
+    50% {
+        left: 0px;
+        box-shadow: 0 0 4px 4px #00f0f0;
+        opacity: 20%;
+        -webkit-animation-timing-function: ease-in;
+    }
+    75% {
+        left: 40vw;
+        box-shadow: 0 0 8px 8px #00f0f0;
+        opacity: 100%;
+        -webkit-animation-timing-function: ease-out;
+    }
+    100% {
+        left: 80vw;
+        box-shadow: 0 0 4px 4px #00f0f0;
+        opacity: 20%;
+    }
+}
+@keyframes glow-ball-move-2 {
+    0% {
+        left: 80vw;
+        box-shadow: 0 0 4px 4px #00f0f0;
+        opacity: 20%;
+        animation-timing-function: ease-in;
+    }
+    25% {
+        left: 40vw;
+        box-shadow: 0 0 8px 8px #00f0f0;
+        opacity: 100%;
+        animation-timing-function: ease-out;
+    }
+    50% {
+        left: 0px;
+        box-shadow: 0 0 4px 4px #00f0f0;
+        opacity: 20%;
+        animation-timing-function: ease-in;
+    }
+    75% {
+        left: 40vw;
+        box-shadow: 0 0 8px 8px #00f0f0;
+        opacity: 100%;
+        animation-timing-function: ease-out;
+    }
+    100% {
+        left: 80vw;
+        box-shadow: 0 0 4px 4px #00f0f0;
+        opacity: 20%;
+    }
+}

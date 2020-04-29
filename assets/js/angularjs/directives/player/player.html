@@ -1,0 +1,51 @@
+<div id="player">
+    <div class="container bg-dark">
+        <div class="row">
+            <div class="col-2 d-flex align-items-center justify-content-center" id="favicon">
+                <img on-error="/default-image.png" ng-src="{{ $player.station.favicon }}" class="rounded">
+            </div>
+            <div class="col-8" id="info">
+                <div class="row">
+                    <div class="col-12 align-middle text-center">
+                        <p ng-hide="$player.station.name" class="title">Select Radio</p>
+                        <p ng-show="$player.station.name" class="title">{{ $player.station.name }}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div id="volume-slider">
+                            <input type="range" min="0" max="100" value="50" ng-model="$player.volume" class="slider" id="myRange">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-2">
+                <div class="skew">
+                    <div class="skew-cancel">
+                        <a href="">
+                            <div ng-click="$player.pause()">
+                                <div class="play text-center">
+                                    <div ng-show="$player.audio.paused"><i class="fas fa-play"></i></div>
+                                    <div ng-hide="$player.audio.paused"><i class="fas fa-pause"></i></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="skew">
+                    <div class="skew-cancel">
+                        <a href="">
+                            <div ng-click="$player.mute()">
+                                <div class="play text-center">
+                                    <div ng-hide="$player.audio.muted"><i  class="fas fa-volume-up"></i></div>
+                                    <div ng-show="$player.audio.muted"><i  class="fas fa-volume-mute"></i></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

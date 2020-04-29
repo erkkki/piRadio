@@ -1,0 +1,44 @@
+#sidebar-wrapper {
+    min-height: 100vh;
+    width: 20%;
+    /*margin-left: -15rem;*/
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-head {
+    font-size: 2rem;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+}
+
+#sidebar-wrapper a, a:link, a:hover, a:visited, a:active {
+    color: #efeff1;
+    text-decoration: none;
+}
+#sidebar-wrapper .skew {
+    border: solid;
+    border-color: #00f0f0;
+    background-color: #1f1f23;
+    margin: 10px;
+    transform: skew(-20deg);
+}
+#sidebar-wrapper .skew-cancel {
+    transform: skew(20deg);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 1rem;
+}
+#sidebar-wrapper .list-group {
+    transform: scale(1.3);
+}
+
+#sidebar-wrapper .list-group {
+    width: 20vw;
+}

@@ -1,0 +1,16 @@
+<div class="container" id="stations">
+    <div class="row row-cols-sm-3 row-cols-md-4 row-cols-lg-6 justify-content-md-center">
+        <div class="col skew" ng-repeat="station in $home.stations | stationLimit: limitTo:100 | filter:{ hls: '!1'}">
+            <div class="skew-cancel">
+                <a href="">
+                    <div ng-click="$home.changeStation(station.stationuuid)">
+                        <div class="station">
+                            {{ station.name }}
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+

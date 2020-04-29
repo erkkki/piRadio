@@ -1,0 +1,10 @@
+<div id="alert">
+    <div ng-repeat="alert in $alert.alerts">
+        <div class="alert alert-danger" role="alert">
+            <strong>Oh snap! </strong> {{ alert.message }}
+            <div ng-click="$alert.remove($index)" class="alert-close">
+                <a href="" style="color: black"><i class="far fa-times-circle"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

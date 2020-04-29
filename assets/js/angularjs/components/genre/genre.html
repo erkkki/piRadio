@@ -1,0 +1,11 @@
+<div class="container" id="genres">
+    <div class="row justify-content-md-center">
+        <div class="col-3 skew" ng-repeat="genre in $genre.genres | genreLimit | orderBy:order">
+            <div class="skew-cancel">
+                <a ui-sref="station({by: 'genre', id: genre.name })">
+                    <p class="text-center">{{ genre.name | uppercase }}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

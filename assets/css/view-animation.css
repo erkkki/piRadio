@@ -1,0 +1,31 @@
+.ui-view-container {
+    margin-top: 2rem;
+    position: relative;
+    /*overflow: hidden;*/
+}
+
+ui-view.ng-enter, ui-view.ng-leave {
+    position: absolute;
+    left: 0;
+    right: 0;
+    transition:all 1s;
+}
+
+ui-view.ng-enter {
+    left: -1000px;
+    z-index: -1;
+}
+
+ui-view.ng-enter-active {
+    left: 0;
+}
+
+ui-view.ng-leave {
+    left: 0;
+    opacity: 1;
+}
+
+ui-view.ng-leave-active {
+    right: -1600px;
+    opacity: 0;
+}

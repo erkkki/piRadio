@@ -1,4 +1,5 @@
 var Encore = require('@symfony/webpack-encore');
+var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -77,6 +78,8 @@ Encore
     .addLoader(
         { test: /\.(html)$/, use: { loader: 'html-loader' } }
     )
+
+    .addPlugin(new ngAnnotatePlugin())
 ;
 
 module.exports = Encore.getWebpackConfig();

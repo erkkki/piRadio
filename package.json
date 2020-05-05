@@ -28,6 +28,7 @@
         "autoprefixer": "^9.7.6",
         "hls.js": "^0.13.2",
         "html-loader": "^1.1.0",
+        "ng-annotate-webpack-plugin": "^0.3.0",
         "postcss-loader": "^3.0.0",
         "ui-router": "^1.0.0-alpha.3"
     }

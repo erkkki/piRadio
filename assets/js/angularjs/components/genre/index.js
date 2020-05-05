@@ -1,7 +1,7 @@
 import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 
-import GenreController from './Genre.controller';
+import GenreController from './genre.controller';
 import routing from './genre.routes';
 
 
@@ -11,3 +11,4 @@ export default angular.module('app.Genre', [uiRouter])
     .name;
 
 // GenreController.$inject = ['$Scope','$http'];
+

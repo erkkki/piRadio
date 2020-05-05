@@ -21,10 +21,8 @@
 
 #alert .alert-danger {
     color: #00f0f0;
-    /*background-color: #f8d7da;*/
-    /*border-color: #f5c6cb;*/
-
-    background: #012826;
     border-color: #f50b1e;
+    background: #012826;
+
 
 }

@@ -20,7 +20,7 @@ export default class PlayerController {
         this.$scope.$on('station', function (event,arg) {
             self.getStationData(arg);
         });
-        this.$scope.$watch('$playerctrl.volume', function (newValue, oldValue, scope) {
+        this.$scope.$watch('$player.volume', function (newValue, oldValue, scope) {
             self.updateVolume();
         });
     }
@@ -30,6 +30,7 @@ export default class PlayerController {
         temp_vol = temp_vol.toFixed(2);
         this.audio.volume = temp_vol;
     }
+
     getStationData(station_id) {
         let self = this;
         this.$http.get('/api/radiobrowser/station/byid/'+station_id)

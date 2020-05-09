@@ -1,0 +1,30 @@
+#mobile-navbar {
+    display: none;
+}
+
+#mobile-navbar .mobile-color {
+    color: #00f0f0;
+}
+
+#mobile-navbar a, a:link, a:hover, a:visited, a:active {
+    color: #00f0f0;
+    text-decoration: none;
+}
+#mobile-navbar .skew {
+    border: solid;
+    border-color: #00f0f0;
+    background-color: #1f1f23;
+    transform: skew(-20deg);
+}
+#mobile-navbar .skew-cancel {
+    transform: skew(20deg);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    #mobile-navbar {
+        display: block;
+    }
+}

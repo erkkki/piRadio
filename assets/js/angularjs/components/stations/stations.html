@@ -1,6 +1,6 @@
 <div class="container" id="stations">
     <div class="row row-cols-3 row-cols-md-4 row-cols-lg-4" style="margin: auto;">
-        <div class="col" ng-repeat="station in $home.stations | stationLimit: limitTo:100 | filter:{ hls: '!1'}">
+        <div class="col" ng-repeat="station in $stations.stations | stationLimit: limitTo:100 | filter:{ hls: '!1'}">
             <station></station>
         </div>
     </div>

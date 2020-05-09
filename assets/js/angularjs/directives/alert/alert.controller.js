@@ -1,7 +1,5 @@
-
-
+/*@ngInject*/
 export default class AlertController {
-    /*@ngInject*/
     constructor($scope) {
         this.name = 'Alert Controller';
         this.$scope = $scope;
@@ -24,5 +22,3 @@ export default class AlertController {
     }
 
 }
-
-// AlertController.$inject = ['$Scope'];

@@ -35,18 +35,8 @@ Encore
     // but, you probably want this, unless you're building a single-page app
     .enableSingleRuntimeChunk()
 
-    /*
-     * FEATURE CONFIG
-     *
-     * Enable & configure other features below. For a full
-     * list of features, see:
-     * https://symfony.com/doc/current/frontend.html#adding-more-features
-     */
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
-    // .enableSourceMaps(!Encore.isProduction())
-    // .enableSourceMaps(Encore.isProduction())
-    // enables hashed filenames (e.g. app.abc123.css)
     .enableVersioning(Encore.isProduction())
 
     // enables @babel/preset-env polyfills
@@ -55,30 +45,11 @@ Encore
         config.corejs = 3;
     })
 
-    // enables Sass/SCSS support
     .enableSassLoader()
-
     .enablePostCssLoader()
-
-    // uncomment if you use TypeScript
-    //.enableTypeScriptLoader()
-
-    // uncomment to get integrity="..." attributes on your script & link tags
-    // requires WebpackEncoreBundle 1.4 or higher
-    //.enableIntegrityHashes(Encore.isProduction())
-
-    // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
-
-    // uncomment if you use API Platform Admin (composer req api-admin)
-    //.enableReactPreset()
-    //.addEntry('admin', './assets/js/admin.js')
-
-    // Loader to use html template in routes
     .addLoader(
         { test: /\.(html)$/, use: { loader: 'html-loader' } }
     )
-
     .addPlugin(new ngAnnotatePlugin())
 ;
 

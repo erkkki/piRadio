@@ -1,9 +1,8 @@
+/* @ngInject */
 export default class HomeController {
-    /* @ngInject */
     constructor ($rootScope, $http) {
         this.$rootScope = $rootScope;
         this.$http = $http;
-
         this.stations = [];
     }
 
@@ -13,10 +12,6 @@ export default class HomeController {
             .then(function (response) {
                 self.stations = JSON.parse(response.data);
             });
-    }
-
-    changeStation (station_id) {
-        this.$rootScope.$broadcast('station', station_id);
     }
 }
 

@@ -5,6 +5,7 @@ import '../css/stations.css';
 import '../css/country.css';
 import '../css/genres.css';
 import '../css/sidebar.css';
+import '../css/mobile-navbar.css';
 import '../css/glow-ball.css';
 import '../css/glow-ball-2.css';
 import '../css/alert.css';
@@ -33,14 +34,17 @@ import routing from './app.config';
 import HomeState from './angularjs/components/home';
 import GenreState from './angularjs/components/genre';
 import CountryState from './angularjs/components/country';
-import StationState from './angularjs/components/station';
+import StationsState from './angularjs/components/stations';
 
 import PlayerDirective from './angularjs/directives/player/player.directive';
+import StationDirective from './angularjs/directives/station/station.directive';
 import AlertDirective from './angularjs/directives/alert/alert.directive';
 
+
 angular
-    .module('app',[uiRouter, ngRoute, ngAnimate, HomeState, GenreState, CountryState, StationState, PlayerDirective, AlertDirective])
-    // .module('app',[uiRouter, ngRoute, ngAnimate, HomeState, GenreState, CountryState, StationState, AlertDirective])
+    .module('app',[uiRouter, ngRoute, ngAnimate,
+        HomeState, GenreState, CountryState, StationsState,
+        PlayerDirective, AlertDirective, StationDirective])
     .config(routing)
     .filter('genreLimit',function () {
         return function (x) {

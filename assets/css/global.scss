@@ -8,7 +8,7 @@ body {
 }
 
 #page-content-wrapper {
-  width: 80%;
+  min-width: 80vw;
 }
 
 .bg-dark {
@@ -19,4 +19,7 @@ body {
   color: #efeff1;
 }
 
+.col {
+  padding: 0;
+}
 

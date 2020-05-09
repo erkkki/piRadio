@@ -53,23 +53,17 @@
                                 </circle>
                                 <circle class="st3" cx="200" cy="200" r="174"/>
                             </svg>
-
-
                         </a>
                     </div>
                     <div class="list-group list-group-flush">
                         <div class="skew">
                             <a ui-sref="country">
-                                <div class="skew-cancel text-center">
-                                    Country
-                                </div>
+                                <div class="skew-cancel text-center">Countries</div>
                             </a>
                         </div>
                         <div class="skew">
                             <a ui-sref="genre">
-                                <div class="skew-cancel text-center">
-                                    Genres
-                                </div>
+                                <div class="skew-cancel text-center">Genres</div>
                             </a>
                         </div>
                     </div>
@@ -79,6 +73,32 @@
 
             <!-- main content -->
             <div id="page-content-wrapper">
+
+                <!-- mobile navbar -->
+                <div id="mobile-navbar">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                        <a class="navbar-brand" href="/">PiRadio</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+                                aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-bars mobile-color"></i>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarToggle">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                                <li class="nav-item active">
+                                    <a ui-sref="country">Countries</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a ui-sref="genre">Genres</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <!-- /mobile navbar -->
+
+
+
                 <!-- player -->
                 <player></player>
                 <!-- /player -->

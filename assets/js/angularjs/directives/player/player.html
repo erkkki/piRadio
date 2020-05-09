@@ -1,13 +1,13 @@
 <div id="player">
     <div class="container bg-dark">
         <div class="row">
-            <div class="col-2 d-flex align-items-center justify-content-center" id="favicon">
+            <div class="col-md-2 col-2 d-flex align-items-center justify-content-center" id="favicon">
                 <img on-error="/default-image.png" ng-src="{{ $player.station.favicon }}" class="rounded">
             </div>
-            <div class="col-8" id="info">
+            <div class="col-md-8 col-6" id="info">
                 <div class="row">
                     <div class="col-12 align-middle text-center">
-                        <p ng-hide="$player.station.name" class="title">Select Radio</p>
+                        <p ng-hide="$player.station.name" class="title">Select Station</p>
                         <p ng-show="$player.station.name" class="title">{{ $player.station.name }}</p>
                     </div>
                 </div>
@@ -18,9 +18,8 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col-2">
+            <div class="col-md-2 col-4">
                 <div class="skew">
                     <div class="skew-cancel">
                         <a href="">

@@ -1,10 +1,9 @@
-export default class StationController {
-    /* @ngInject */
-    constructor ($rootScope ,$scope, $http, $stateParams) {
+/* @ngInject */
+export default class StationsController {
+    constructor ($rootScope,$scope, $http, $stateParams) {
         this.$rootScope = $rootScope;
-        this.$http = $http;
         this.$stateParams = $stateParams;
-
+        this.$http = $http;
         this.stations = [];
     }
 
@@ -28,9 +27,5 @@ export default class StationController {
                 self.stations = JSON.parse(response.data);
             });
 
-    }
-
-    changeStation (station_id) {
-        this.$rootScope.$broadcast('station', station_id);
     }
 }

@@ -1,7 +1,12 @@
+#stations {
+    padding: 20px;
+}
+
 #stations .skew {
     border: solid;
     border-color: #00f0f0;
     margin: 6px;
+    padding-left: 6px;
     transform: skew(-20deg);
     background: #012826;
 }

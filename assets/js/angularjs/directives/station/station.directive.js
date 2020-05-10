@@ -1,4 +1,7 @@
 import angular from 'angular';
+
+import './station.css';
+
 import StationController from './station.controller';
 
 function station() {

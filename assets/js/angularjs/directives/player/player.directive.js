@@ -1,4 +1,7 @@
 import angular from 'angular';
+
+import './player.css';
+
 import PlayerController from './player.controller';
 import OnErrorDirective from '../onerror.directive';
 

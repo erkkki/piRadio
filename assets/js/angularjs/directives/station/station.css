@@ -1,0 +1,10 @@
+a, a:link, a:hover, a:visited, a:active {
+    text-decoration: none;
+    color: #00f0f0;
+}
+
+.station {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}

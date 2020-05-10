@@ -1,23 +1,14 @@
-#genres .skew {
+.skew {
     border: solid;
     border-color: #00f0f0;
-    margin: 10px;
+    margin: 6px;
+    padding-left: 6px;
     transform: skew(-20deg);
     background: #012826;
 }
-#genres .skew-cancel {
+.skew-cancel {
     transform: skew(20deg);
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-}
-
-
-#genres a, a:link, a:hover, a:visited, a:active {
-    text-decoration: none;
-    color: #00f0f0;
-}
-
-#genres p {
-    margin-bottom: 0;
 }

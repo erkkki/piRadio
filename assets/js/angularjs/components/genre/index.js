@@ -1,6 +1,8 @@
 import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 
+import './genres.css';
+
 import GenreController from './genre.controller';
 import routing from './genre.routes';
 

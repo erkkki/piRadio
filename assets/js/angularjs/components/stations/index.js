@@ -1,6 +1,8 @@
 import angular from 'angular';
 import uiRouter from '@uirouter/angularjs';
 
+import './stations.css';
+
 import StationsController from './stations.controller';
 import routing from './stations.routes';
 

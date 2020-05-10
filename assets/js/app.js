@@ -1,16 +1,12 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import '../css/global.scss';
-import '../css/player.css';
-import '../css/stations.css';
-import '../css/country.css';
-import '../css/genres.css';
 import '../css/sidebar.css';
 import '../css/mobile-navbar.css';
 import '../css/glow-ball.css';
 import '../css/glow-ball-2.css';
-import '../css/alert.css';
 import '../css/view-animation.css';
 import '../css/svgTitle.css';
+import '../css/skew.css';
 
 
 const imagesContext = require.context('../images', true, /\.(png|jpg|jpeg|gif|ico|svg|webp)$/);

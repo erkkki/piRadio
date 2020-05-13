@@ -1,6 +1,17 @@
 .ui-view-container {
     margin-top: 2rem;
     position: relative;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+@media (max-width: 768px) {
+    .ui-view-container {
+        margin-top: 2rem;
+        position: relative;
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
 }
 
 ui-view.ng-enter, ui-view.ng-leave {

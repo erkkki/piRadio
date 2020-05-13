@@ -1,10 +1,13 @@
 <div class="container" id="countrys">
-    <div class="row justify-content-md-center">
-        <div class="col-3 skew" ng-repeat="country in $country.countrys | stationCountGreater:80">
-            <div class="skew-cancel">
-                <a ui-sref="stations({ by: 'country', id: country.name})" >
-                    <p class="text-center">{{ country.name | uppercase }}</p>
-                </a>
+
+    <div class="row row-cols-3 row-cols-md-4 row-cols-lg-4" style="margin: auto;">
+        <div class="col" ng-repeat="country in $country.countrys | stationCountGreater:80">
+            <div class="skew">
+                <div class="skew-cancel">
+                    <a ui-sref="stations({ by: 'country', id: country.name})" >
+                        <p class="text-center">{{ country.name | uppercase }}</p>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

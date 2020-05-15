@@ -16,9 +16,18 @@ export default class PlayerController {
 
     $onInit() {
         let self = this;
-        this.$scope.$on('station', function (event,arg) {
-            self.getStationData(arg);
+
+        // Listens when user changes station.
+        this.$scope.$on('station', function (event,station_id) {
+
+            // Load station data from api.
+            self.RadioApi.getStationById(station_id).then(function (response) {
+                let data = JSON.parse(response.data);
+                self.startPlayback(data[0]);
+            })
         });
+
+        // Listens volume slider value.
         this.$scope.$watch('$player.volume', function (newValue, oldValue, scope) {
             self.updateVolume();
         });
@@ -28,22 +37,6 @@ export default class PlayerController {
         let temp_vol = this.volume / 100;
         temp_vol = temp_vol.toFixed(2);
         this.audio.volume = temp_vol;
-    }
-
-    getStationData(station_id) {
-        let self = this;
-
-        this.RadioApi.getStationById(station_id).then(function (response) {
-            let data = JSON.parse(response.data);
-            self.updateStation(data[0]);
-        })
-    }
-
-    updateStation (station_data) {
-        this.station = station_data;
-        this.audio.pause();
-        this.audio = null;
-        this.startPlayback();
     }
 
     pause (){
@@ -58,8 +51,12 @@ export default class PlayerController {
         this.audio.muted = !this.audio.muted;
     }
 
-    startPlayback () {
+    startPlayback (station_data) {
         self = this;
+        this.audio.pause();
+        this.audio = null;
+
+        this.station = station_data;
         this.audio = new Audio();
         this.audio.src = this.station.url_resolved;
         let playPromise = this.audio.play();

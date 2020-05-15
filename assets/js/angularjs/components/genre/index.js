@@ -12,5 +12,4 @@ export default angular.module('app.Genre', [uiRouter])
     .controller('GenreController', GenreController)
     .name;
 
-// GenreController.$inject = ['$Scope','$http'];
 

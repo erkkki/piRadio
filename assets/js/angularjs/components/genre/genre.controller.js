@@ -1,17 +1,15 @@
+/* @ngInject */
 export default class GenreController {
-    /* @ngInject */
-    constructor ($scope, $http) {
-        this.$scope = $scope;
-        this.$http = $http;
-
+    constructor (RadioApi) {
+        this.RadioApi = RadioApi;
         this.genres = [];
     }
 
     $onInit() {
         let self = this;
-        this.$http.get('/api/radiobrowser/tags')
-            .then(function (response) {
-                self.genres = JSON.parse(response.data);
-            });
+
+        this.RadioApi.getGenres().then(function (response) {
+            self.genres = JSON.parse(response.data);
+        })
     }
 }

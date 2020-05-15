@@ -26,7 +26,7 @@ import ngRoute from 'angular-route';
 import ngAnimate from 'angular-animate';
 import uiRouter from '@uirouter/angularjs';
 
-import routing from './app.config';
+import config from './app.config';
 import HomeState from './angularjs/components/home';
 import GenreState from './angularjs/components/genre';
 import CountryState from './angularjs/components/country';
@@ -41,15 +41,10 @@ angular
     .module('app',[uiRouter, ngRoute, ngAnimate,
         HomeState, GenreState, CountryState, StationsState,
         PlayerDirective, AlertDirective, StationDirective])
-    .config(routing)
+    .config(config)
     .filter('genreLimit',function () {
         return function (x) {
-            return x.filter(genre => genre.stationcount > 200);
-        }
-    })
-    .filter('stationLimit',function () {
-        return function (x) {
-            return x.filter(station => station.votes > 5);
+            return x.filter(genre => genre.stationcount > 140);
         }
     })
     .filter('stationCountGreater',function () {

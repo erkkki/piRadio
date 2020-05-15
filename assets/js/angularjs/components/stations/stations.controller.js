@@ -1,31 +1,33 @@
 /* @ngInject */
 export default class StationsController {
-    constructor ($rootScope,$scope, $http, $stateParams) {
-        this.$rootScope = $rootScope;
+    constructor ($stateParams, $window, RadioApi) {
         this.$stateParams = $stateParams;
-        this.$http = $http;
+        this.$window = $window;
+        this.RadioApi = RadioApi;
+
         this.stations = [];
     }
 
     $onInit() {
         let self = this;
 
-        let path = '/api/radiobrowser/stations/';
-
         if(this.$stateParams.by === 'country') {
-            path = path + 'bycountry/';
+            this.RadioApi.getStationsByCountry(this.$stateParams.id)
+                .then(function (response) {
+                    self.stations = JSON.parse(response.data);
+                }
+            );
         }
         else if(this.$stateParams.by === 'genre') {
-            path = path + 'bytag/';
+            this.RadioApi.getStationsByGenre(this.$stateParams.id)
+                .then(function (response) {
+                        self.stations = JSON.parse(response.data);
+                    }
+                );
         }
         else {
-            path = path + 'bycountry/';
+            this.$window.location.href = '/';
         }
-
-        this.$http.get(path + this.$stateParams.id)
-            .then(function (response) {
-                self.stations = JSON.parse(response.data);
-            });
 
     }
 }

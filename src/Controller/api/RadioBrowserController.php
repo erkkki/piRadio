@@ -19,6 +19,17 @@ class RadioBrowserController extends AbstractController
 {
 
     /**
+     * @Route("/api/radiobrowser/stations/byvote", name="api_radiobrowser_stations_by_vote")
+     * @param RadioBrowserApi $radioBrowserApi
+     * @return JsonResponse
+     */
+    public function stationsByVotes(RadioBrowserApi $radioBrowserApi)
+    {
+        $stations = $radioBrowserApi->getStationsByVote();
+        return $this->json($stations);
+    }
+
+    /**
      * @Route("/api/radiobrowser/countries", name="api_radiobrowser_countries")
      * @param RadioBrowserApi $radioBrowserApi
      * @return JsonResponse
@@ -27,6 +38,30 @@ class RadioBrowserController extends AbstractController
     {
         $countries = $radioBrowserApi->getCountries();
         return $this->json($countries);
+    }
+
+    /**
+     * @Route("/api/radiobrowser/genres", name="api_radiobrowser_genres")
+     * @param RadioBrowserApi $radioBrowserApi
+     * @return JsonResponse
+     */
+    public function genres(RadioBrowserApi $radioBrowserApi)
+    {
+        $genres = $radioBrowserApi->getTags();
+        return $this->json($genres);
+    }
+
+
+    /**
+     * @Route("/api/radiobrowser/station/byid/{id}", name="api_radiobrowser_station_by_id")
+     * @param $id
+     * @param RadioBrowserApi $radioBrowserApi
+     * @return JsonResponse
+     */
+    public function stationById($id, RadioBrowserApi $radioBrowserApi)
+    {
+        $station = $radioBrowserApi->getStationsBy('byuuid',$id);
+        return $this->json($station);
     }
 
     /**
@@ -52,39 +87,4 @@ class RadioBrowserController extends AbstractController
         $stations = $radioBrowserApi->getStationsBy('bytag',$tag);
         return $this->json($stations);
     }
-
-    /**
-     * @Route("/api/radiobrowser/station/byid/{id}", name="api_radiobrowser_station_by_id")
-     * @param $id
-     * @param RadioBrowserApi $radioBrowserApi
-     * @return JsonResponse
-     */
-    public function stationById($id, RadioBrowserApi $radioBrowserApi)
-    {
-        $station = $radioBrowserApi->getStationsBy('byuuid',$id);
-        return $this->json($station);
-    }
-
-    /**
-     * @Route("/api/radiobrowser/stations/byvote", name="api_radiobrowser_stations_by_vote")
-     * @param RadioBrowserApi $radioBrowserApi
-     * @return JsonResponse
-     */
-    public function stationsByVotes(RadioBrowserApi $radioBrowserApi)
-    {
-        $stations = $radioBrowserApi->getStationsByVote();
-        return $this->json($stations);
-    }
-
-    /**
-     * @Route("/api/radiobrowser/tags", name="api_radiobrowser_tags")
-     * @param RadioBrowserApi $radioBrowserApi
-     * @return JsonResponse
-     */
-    public function tags(RadioBrowserApi $radioBrowserApi)
-    {
-        $tags = $radioBrowserApi->getTags();
-        return $this->json($tags);
-    }
-
 }

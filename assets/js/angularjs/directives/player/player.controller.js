@@ -2,17 +2,16 @@
 export default class PlayerController {
 
     // TODO hls support. Now just filtering hls streams out.
-    // TODO audio waweform
-    // TODO Favorite?
 
-    constructor($rootScope, $scope, $http) {
+    constructor($scope, initVolume, RadioApi) {
         this.name = 'Player Controller';
-        this.$rootScope = $rootScope;
         this.$scope = $scope;
-        this.$http = $http;
+        this.RadioApi = RadioApi;
+
+
         this.audio  = new Audio();
         this.station = {};
-        this.volume = 10;
+        this.volume = initVolume;
     }
 
     $onInit() {
@@ -33,11 +32,11 @@ export default class PlayerController {
 
     getStationData(station_id) {
         let self = this;
-        this.$http.get('/api/radiobrowser/station/byid/'+station_id)
-            .then(function (response) {
-                let data = JSON.parse(response.data);
-                self.updateStation(data[0]);
-            });
+
+        this.RadioApi.getStationById(station_id).then(function (response) {
+            let data = JSON.parse(response.data);
+            self.updateStation(data[0]);
+        })
     }
 
     updateStation (station_data) {

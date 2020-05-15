@@ -1,17 +1,15 @@
+/* @ngInject */
 export default class CountryController {
-    /* @ngInject */
-    constructor ($scope, $http) {
-        this.$scope = $scope;
-        this.$http = $http;
-
+    constructor (RadioApi) {
+        this.RadioApi = RadioApi;
         this.countrys = [];
     }
 
     $onInit() {
         let self = this;
-        this.$http.get('/api/radiobrowser/countries')
-            .then(function (response) {
-                self.countrys = JSON.parse(response.data);
-            });
+
+        this.RadioApi.getCountries().then(function (response) {
+            self.countrys = JSON.parse(response.data);
+        })
     }
 }

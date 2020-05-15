@@ -10,5 +10,3 @@ export default angular.module('app.stations', [uiRouter])
     .config(routing)
     .controller('StationsController', StationsController)
     .name;
-
-StationsController.$inject = ['$rootScope','$scope','$http','$stateParams'];

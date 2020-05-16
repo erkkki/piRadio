@@ -2,7 +2,7 @@
     <div class="container bg-dark">
         <div class="row">
             <div class="col-md-2 col-2 d-flex align-items-center justify-content-center" id="favicon">
-                <img on-error="/default-image.png" ng-src="{{ $player.station.favicon }}" class="rounded">
+                <img on-error="default-image.png" ng-src="{{ $player.station.favicon }}" class="rounded" alt="stations logo">
             </div>
             <div class="col-md-8 col-6" id="info">
                 <div class="row">
@@ -14,7 +14,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div id="volume-slider">
-                            <input type="range" min="0" max="100" value="50" ng-model="$player.volume" class="slider" id="myRange">
+                            <input id="myRange" type="range" min="0" max="100" value="50" ng-model="$player.volume" class="slider">
+                            <label for="myRange" class="d-none">Volume</label>
                         </div>
                     </div>
                 </div>

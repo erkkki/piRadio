@@ -8,19 +8,18 @@
 
 namespace App\Service;
 
-use Symfony\Contracts\HttpClient\HttpClientInterface;
+use Symfony\Component\HttpClient\HttpClient;
 
 
 class RadioBrowserApi
 {
-
-
     private $httpClient;
     private $host_url = 'http://nl1.api.radio-browser.info/';
 
-    public function __construct(HttpClientInterface  $httpClient)
+    public function __construct()
     {
-        $this->httpClient = $httpClient;
+
+        $this->httpClient = HttpClient::create();
         $this->stationsByList = array('byuuid','byname','bynameexact','bycodec','bycodecexact','bycountry','bycountryexact',
             'bycountrycodeexact','bystate','bystateexact','bylanguage','bylanguageexact','bytag','bytagexact');
     }

@@ -3,9 +3,10 @@ export default class PlayerController {
 
     // TODO hls support. Now just filtering hls streams out.
 
-    constructor($scope, initVolume, RadioApi) {
+    constructor($rootScope, $scope, initVolume, RadioApi) {
         this.name = 'Player Controller';
         this.$scope = $scope;
+        this.$rootScope = $rootScope;
         this.RadioApi = RadioApi;
 
 

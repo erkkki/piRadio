@@ -12,6 +12,10 @@
     top: 10px;
 }
 
+.alert-close :hover {
+    cursor: pointer;
+}
+
 #alert .alert {
     position: relative;
     margin-bottom: 1rem;

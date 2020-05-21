@@ -1,9 +1,17 @@
+<!--TODO too long for mobile-->
+
 <div id="alert">
     <div ng-repeat="alert in $alert.alerts">
         <div class="alert alert-danger" role="alert">
-            <strong>Oh snap! </strong> {{ alert.message }}
-            <div ng-click="$alert.remove($index)" class="alert-close">
-                <a href=""><h1><i class="far fa-times-circle"></i></h1></a>
+            <div class="container">
+                <div class="col-10">
+                    <strong>Oh snap! </strong> {{ alert.message }}
+                </div>
+                <div class="alert-close">
+                    <div ng-click="$alert.remove($index)">
+                        <a href=""><h1><i class="far fa-times-circle"></i></h1></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

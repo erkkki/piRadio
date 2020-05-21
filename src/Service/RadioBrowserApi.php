@@ -10,11 +10,13 @@ namespace App\Service;
 
 use PHPUnit\Exception;
 use Symfony\Component\HttpClient\HttpClient;
+use Symfony\Component\Cache\Adapter\MemcachedAdapter;
 
 
 class RadioBrowserApi
 {
     private $httpClient;
+    private $cache;
     private $host_url = 'http://nl1.api.radio-browser.info/';
     private $format = 'json';
 
@@ -23,20 +25,56 @@ class RadioBrowserApi
         $this->httpClient = HttpClient::create(['headers' => [
             'User-Agent' => $_SERVER['APP_NAME'].'/'.$_SERVER['APP_VER'],
         ]]);
+        try {
+            $this->cache = MemcachedAdapter::createConnection(
+                'memcached://localhost:11211'
+            );
+        } catch (\Exception $e) {
+            $this->cache = false;
+        }
+
     }
 
     private function get($url)
     {
+
+        // If all ready in cache return cache value
+
+        if($this->cache) {
+
+            $item = $this->cache->get($url);
+
+            if($item) {
+                return $item;
+            }
+
+        }
+
+
+
+        // Else get from api & save to cache
         try {
             $response = $this->httpClient->request('GET',$this->host_url . $this->format . "/" . $url);
+
+            // Getting headers to throw exception and make sure it's ok.
             $headers = $response->getHeaders();
+
         } catch (\Exception $e) {
             return 'Error on connecting to radio api.';
         }
 
         $content = $response->toArray();
+
+        // Save to cache
+
+        if($this->cache) {
+            $this->cache->add($url, $content, 60);
+        }
+
+
         return $content;
     }
+
 
     public function getCountries()
     {

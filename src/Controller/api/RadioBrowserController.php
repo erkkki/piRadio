@@ -60,7 +60,7 @@ class RadioBrowserController extends AbstractController
      */
     public function stationById($id, RadioBrowserApi $radioBrowserApi)
     {
-        $station = $radioBrowserApi->getStationsBy('byuuid',$id);
+        $station = $radioBrowserApi->getStationsBy('byuuid',$id, $limit = 1);
         return $this->json($station);
     }
 
@@ -77,7 +77,7 @@ class RadioBrowserController extends AbstractController
     }
 
     /**
-     * @Route("/api/radiobrowser/stations/bytag/{tag}", name="api_radiobrowser_stations_by_tag")
+     * @Route("/api/radiobrowser/stations/bygenre/{tag}", name="api_radiobrowser_stations_by_tag")
      * @param $tag
      * @param RadioBrowserApi $radioBrowserApi
      * @return JsonResponse

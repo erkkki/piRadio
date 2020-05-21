@@ -23,7 +23,7 @@ export default class PlayerController {
 
             // Load station data from api.
             self.RadioApi.getStationById(station_id).then(function (response) {
-                let data = JSON.parse(response.data);
+                let data = response.data;
                 self.startPlayback(data[0]);
             })
         });

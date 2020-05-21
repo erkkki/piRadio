@@ -8,6 +8,7 @@
 
 namespace App\Service;
 
+use PHPUnit\Exception;
 use Symfony\Component\HttpClient\HttpClient;
 
 
@@ -15,42 +16,54 @@ class RadioBrowserApi
 {
     private $httpClient;
     private $host_url = 'http://nl1.api.radio-browser.info/';
+    private $format = 'json';
 
     public function __construct()
     {
-
-        $this->httpClient = HttpClient::create();
-        $this->stationsByList = array('byuuid','byname','bynameexact','bycodec','bycodecexact','bycountry','bycountryexact',
-            'bycountrycodeexact','bystate','bystateexact','bylanguage','bylanguageexact','bytag','bytagexact');
+        $this->httpClient = HttpClient::create(['headers' => [
+            'User-Agent' => $_SERVER['APP_NAME'].'/'.$_SERVER['APP_VER'],
+        ]]);
     }
 
-    public function getCountries($format = 'json')
+    private function get($url)
     {
-        $response = $this->httpClient->request('GET', $this->host_url . '/'. $format .'/countries');
-        $content = $response->getContent();
+        try {
+            $response = $this->httpClient->request('GET',$this->host_url . $this->format . "/" . $url);
+            $headers = $response->getHeaders();
+        } catch (\Exception $e) {
+            return 'Error on connecting to radio api.';
+        }
+
+        $content = $response->toArray();
         return $content;
     }
 
-    public function getStationsBy($by,$searchterm, $format = 'json', $limit = 100, $offset = 0)
+    public function getCountries()
+    {
+        $url = 'countries';
+        $countries = $this->get($url);
+        return $countries;
+    }
+
+    public function getStationsBy($by, $searchterm, $limit = 100, $offset = 0)
     {
         $order = 'votes';
-        $response = $this->httpClient->request('GET', $this->host_url . '/'. $format .'/stations/'. $by .'/' . $searchterm .
-            '?limit='. $limit . '&offset=' . $offset . '&order=' . $order . '&reverse=true');
-        $content = $response->getContent();
-        return $content;
+        $url = 'stations/'. $by .'/' . $searchterm . '?limit='. $limit . '&offset=' . $offset . '&order=' . $order . '&reverse=true';
+        $stations = $this->get($url);
+        return $stations;
     }
 
-    public function getStationsByVote($count = 100, $format = 'json')
+    public function getStationsByVote($count = 100)
     {
-        $response = $this->httpClient->request('GET', $this->host_url . '/'. $format .'/stations/topvote/' . $count);
-        $content = $response->getContent();
-        return $content;
+        $url = 'stations/topvote/' . $count;
+        $stations = $this->get($url);
+        return $stations;
     }
 
-    public function getTags($format = 'json')
+    public function getTags()
     {
-        $response = $this->httpClient->request('GET', $this->host_url . '/'. $format .'/tags');
-        $content = $response->getContent();
-        return $content;
+        $url = 'tags';
+        $tags = $this->get($url);
+        return $tags;
     }
 }

@@ -14,14 +14,14 @@ export default class StationsController {
         if(this.$stateParams.by === 'country') {
             this.RadioApi.getStationsByCountry(this.$stateParams.id)
                 .then(function (response) {
-                    self.stations = JSON.parse(response.data);
+                    self.stations = response.data;
                 }
             );
         }
         else if(this.$stateParams.by === 'genre') {
             this.RadioApi.getStationsByGenre(this.$stateParams.id)
                 .then(function (response) {
-                        self.stations = JSON.parse(response.data);
+                        self.stations = response.data;
                     }
                 );
         }

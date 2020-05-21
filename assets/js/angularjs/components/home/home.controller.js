@@ -10,7 +10,7 @@ export default class HomeController {
         let self = this;
 
         this.RadioApi.getTopStations().then(function (response) {
-            self.stations = JSON.parse(response.data);
+            self.stations = response.data;
         })
     }
 }

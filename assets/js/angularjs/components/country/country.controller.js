@@ -9,7 +9,7 @@ export default class CountryController {
         let self = this;
 
         this.RadioApi.getCountries().then(function (response) {
-            self.countrys = JSON.parse(response.data);
+            self.countrys = response.data;
         })
     }
 }

@@ -9,7 +9,7 @@ export default class GenreController {
         let self = this;
 
         this.RadioApi.getGenres().then(function (response) {
-            self.genres = JSON.parse(response.data);
+            self.genres = response.data;
         })
     }
 }

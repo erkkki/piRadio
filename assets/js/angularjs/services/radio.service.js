@@ -7,27 +7,27 @@ class RadioApi {
     }
 
     getTopStations() {
-        return this.$http.get('/api/radiobrowser/stations/byvote');
+        return this.$http.get('/api/radio/stations');
     }
 
     getCountries() {
-        return this.$http.get('/api/radiobrowser/countries');
+        return this.$http.get('/api/radio/countries');
     }
 
     getGenres() {
-        return this.$http.get('/api/radiobrowser/genres');
+        return this.$http.get('/api/radio/genres');
     }
 
     getStationById(station_id) {
-        return this.$http.get('/api/radiobrowser/station/byid/'+ station_id);
+        return this.$http.get('/api/radio/stations/by/byuuid/'+ station_id);
     }
 
     getStationsByGenre(genre) {
-        return this.$http.get('/api/radiobrowser/stations/bygenre/'+ genre);
+        return this.$http.get('/api/radio/stations/by/bytag/'+ genre);
     }
 
     getStationsByCountry(country) {
-        return this.$http.get('/api/radiobrowser/stations/bycountry/'+ country);
+        return this.$http.get('/api/radio/stations/by/bycountry/'+ country);
     }
 }
 

@@ -11,7 +11,7 @@ export default class PlayerController {
 
 
         this.audio  = new Audio();
-        this.station = {'favicon': 'default-image.png'};
+        this.station = {'favicon': 'technical.jpg'};
         this.volume = initVolume;
     }
 

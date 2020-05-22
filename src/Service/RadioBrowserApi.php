@@ -38,7 +38,7 @@ class RadioBrowserApi
     private function get($url)
     {
 
-        // If all ready in cache return cache value
+        // If all ready in Memcached return cache value
 
         if($this->cache) {
 
@@ -50,9 +50,7 @@ class RadioBrowserApi
 
         }
 
-
-
-        // Else get from api & save to cache
+        // Else get from api & save to Memcached
         try {
             $response = $this->httpClient->request('GET',$this->host_url . $this->format . "/" . $url);
 
@@ -65,13 +63,10 @@ class RadioBrowserApi
 
         $content = $response->toArray();
 
-        // Save to cache
-
+        // Save to Memcached
         if($this->cache) {
             $this->cache->add($url, $content, 60);
         }
-
-
         return $content;
     }
 

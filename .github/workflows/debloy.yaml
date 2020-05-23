@@ -16,5 +16,10 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-            whoami
-            ls -al
+            cd piRadio/
+            git reset --hard
+            git pull
+            cp .env.sample.prod .env
+            composer install --no-dev --optimize-autoloader
+            yarn install
+            yarn encore prod

@@ -38,3 +38,13 @@ img{
   cursor: pointer;
 }
 
+#noscript {
+  margin-top: 20vh;
+  position: relative;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+#noscript a, a:link, a:hover, a:visited, a:active {
+  text-decoration: underline;
+}

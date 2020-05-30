@@ -9,32 +9,32 @@ import '../css/svgTitle.css';
 import '../css/skew.css';
 
 
-const imagesContext = require.context('../images', true, /\.(png|jpg|jpeg|gif|ico|svg|webp)$/);
-imagesContext.keys().forEach(imagesContext);
+// const imagesContext = require.context('../images', true, /\.(png|jpg|jpeg|gif|ico|svg|webp)$/);
+// imagesContext.keys().forEach(imagesContext);
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
-import $ from 'jquery';
+// import $ from 'jquery';
 
 require('@fortawesome/fontawesome-free/css/all.min.css');
-require('@fortawesome/fontawesome-free/js/all.js');
 require('bootstrap');
-require('hls.js');
+// require('hls.js');
 
 // AngularJS
-import angular from 'angular';
-import ngRoute from 'angular-route';
+import angular   from 'angular';
+import ngRoute   from 'angular-route';
 import ngAnimate from 'angular-animate';
-import uiRouter from '@uirouter/angularjs';
+import uiRouter  from '@uirouter/angularjs';
 
 import config from './app.config';
-import HomeState from './angularjs/components/home';
-import GenreState from './angularjs/components/genre';
-import CountryState from './angularjs/components/country';
+
+import HomeState     from './angularjs/components/home';
+import GenreState    from './angularjs/components/genre';
+import CountryState  from './angularjs/components/country';
 import StationsState from './angularjs/components/stations';
 
-import PlayerDirective from './angularjs/directives/player/player.directive';
+import PlayerDirective  from './angularjs/directives/player/player.directive';
 import StationDirective from './angularjs/directives/station/station.directive';
-import AlertDirective from './angularjs/directives/alert/alert.directive';
+import AlertDirective   from './angularjs/directives/alert/alert.directive';
 
 
 angular

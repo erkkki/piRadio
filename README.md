@@ -2,9 +2,15 @@
 
 Radio player for Raspberry Pi & touch screen.
 
+Website [piRadio](http://piradio.fi/)
 
-How to run in rasberry pi on boot & kiosk mode.
 
-https://pimylifeup.com/raspberry-pi-kiosk/
+## Kiosk mode
 
-I had to change ‘Type =simple’ to ‘Type=forking’ in my systemd kiosk.service file
+How to run in Raspberry Pi in Kiosk mode.
+
+[Raspberry Pi Kiosk](https://pimylifeup.com/raspberry-pi-kiosk/)
+
+- Change url.
+- I had to change in kiosk.service
+    - ‘Type =simple’ to ‘Type=forking’ in my systemd kiosk.service file

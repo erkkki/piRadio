@@ -3,6 +3,7 @@
 }
 .glow-ball {
     position: absolute;
+    top: 102px;
     right: -2px;
 
     width: 4px;
@@ -11,7 +12,7 @@
     background-color: #00f0f0;
     box-shadow: 0 0 10px 10px #00f0f0;
 
-    animation-duration: 10s;
+    animation-duration: 30s;
     animation-delay: 2s;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
@@ -22,31 +23,26 @@
     0% {
         top: 102px;
         box-shadow: 0 0 4px 4px #00f0f0;
-        opacity: 20%;
         animation-timing-function: ease-in;
     }
     25% {
         top: 50vh;
         box-shadow: 0 0 8px 8px #00f0f0;
-        opacity: 100%;
         animation-timing-function: ease-out;
     }
     50% {
         top: 98vh;
         box-shadow: 0 0 4px 4px #00f0f0;
-        opacity: 20%;
         animation-timing-function: ease-in;
     }
     75% {
         top: 50vh;
         box-shadow: 0 0 8px 8px #00f0f0;
-        opacity: 100%;
         animation-timing-function: ease-out;
     }
     100% {
         top: 102px;
         box-shadow: 0 0 4px 4px #00f0f0;
-        opacity: 20%;
     }
 }
 
